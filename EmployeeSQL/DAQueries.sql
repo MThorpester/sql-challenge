@@ -53,10 +53,10 @@ LIMIT 1000;
 
 -- In descending order, list the frequency count of employee last names, i.e., how many employees
 -- share each last name.
-SELECT last_name, COUNT(*)
+SELECT last_name, COUNT(*) AS "number_of_occurrences"
 FROM employee
 GROUP BY last_name
-ORDER BY last_name DESC;
+ORDER BY "number_of_occurrences" DESC;
 
 
 
