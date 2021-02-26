@@ -1,3 +1,4 @@
+-- Ensure that the tables have been removed before re-creating them
 DROP TABLE IF EXISTS dept_manager;
 DROP TABLE IF EXISTS dept_emp;
 DROP TABLE IF EXISTS departments;
@@ -10,7 +11,7 @@ CREATE TABLE titles (
 	title VARCHAR(30)
 );
 
-SELECT * FROM titles LIMIT 100;
+-- SELECT * FROM titles LIMIT 10;
 
 CREATE TABLE employee (
 	emp_no INTEGER PRIMARY KEY,
@@ -22,7 +23,7 @@ CREATE TABLE employee (
 	hire_date DATE,
 	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
 );
-SELECT * FROM employee LIMIT 100;
+-- SELECT * FROM employee LIMIT 10;
 
 CREATE TABLE salaries (
 	emp_no INTEGER PRIMARY KEY,
@@ -35,7 +36,7 @@ CREATE TABLE departments (
 	dept_no VARCHAR(5) PRIMARY KEY,
 	dept_name VARCHAR(30) NOT NULL
 	);
-SELECT * FROM departments LIMIT 100;
+-- SELECT * FROM departments LIMIT 10;
 
 CREATE TABLE dept_emp (
 	emp_no INTEGER NOT NULL,
@@ -44,7 +45,7 @@ CREATE TABLE dept_emp (
 	FOREIGN KEY (emp_no) REFERENCES employee(emp_no),
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
-SELECT * FROM dept_emp LIMIT 100;
+-- SELECT * FROM dept_emp LIMIT 10;
 
 CREATE TABLE dept_manager (
 	dept_no VARCHAR(5) NOT NULL,
@@ -53,7 +54,7 @@ CREATE TABLE dept_manager (
 	FOREIGN KEY(dept_no) REFERENCES departments(dept_no),
 	FOREIGN KEY(emp_no) REFERENCES employee(emp_no)
 );
-SELECT * FROM dept_manager LIMIT 100;
+-- SELECT * FROM dept_manager LIMIT 10;
 
 
 
